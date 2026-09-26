@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 🏫 CAMPUS LOST & FOUND
+> **Institutional Property Recovery & AI Forensic Verification** 🔍✨
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+### 📌 Overview
 
-View your app in AI Studio: https://ai.studio/apps/eb02802c-a3e3-4278-938e-43dc06b574e2
+Campus Lost & Found modernizes traditional lost-and-found desks into a fast, transparent digital recovery hub for students, faculty, and staff[cite: 1]. 
 
-## Run Locally
+Powered by the **Chiroz AI Agent** (built with Gemini), the platform combines a live tracking ledger with intelligent forensic verification to ensure lost belongings reach their rightful owners quickly and safely[cite: 1].
 
-**Prerequisites:**  Node.js
+---
 
+### ✨ Key Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+* 🏷️ **Quick-Access Categorization**  
+  Instantly filter or log high-frequency items like Student IDs, Phones, Keys, Headphones, Umbrellas, and Chargers[cite: 1].
+
+* ⚡ **Real-Time Recovery Ledger**  
+  A live, dynamic feed displaying reported lost and found items instantly without page reloads[cite: 1].
+
+* 🤖 **Chiroz AI Agent**  
+  An integrated Gemini-powered conversational assistant to guide reports, search inventory, and identify matches[cite: 1].
+
+* 🛡️ **Forensic Verification**  
+  Intelligent matching workflows to authenticate ownership and prevent fraudulent claims[cite: 1].
+
+* 🌙 **Clean Modern Interface**  
+  A sleek dark-mode UI with intuitive controls for reporting items and managing profiles[cite: 1].
+
+---
+
+### 💻 GitHub Description Box (Under 350 Chars)
+
+🏫 Institutional property recovery platform featuring a real-time ledger, instant claim matching, and AI forensic verification powered by the Gemini-based Chiroz AI Agent 🔍⚡
