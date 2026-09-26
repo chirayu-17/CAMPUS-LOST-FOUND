@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =========================================================================
+    // GLOBAL SECURITY POLICY: DEFAULT DENY
+    // =========================================================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // =========================================================================
+    // SECURITY PRIMITIVES & IDENTITY HELPERS
+    // =========================================================================
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Enforces institutional security clearance via custom token claims
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.isAdmin == true ||
+        request.auth.token.admin == true
+      );
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Validation helper for ticket creation
+    function isValidTicket(data) {
+      return data.keys().hasAll(['type', 'category', 'date', 'public_description']) &&
+             data.type in ['lost', 'found'] &&
+             data.category is string && data.category.size() <= 64 &&
+             data.date is string && data.date.size() <= 64 &&
+             data.public_description is string && data.public_description.size() <= 2000 &&
+             (!('hidden_identifier' in data) || (data.hidden_identifier is string && data.hidden_identifier.size() <= 1000));
+    }
+
+    // =========================================================================
+    // TICKETS COLLECTION: ZERO-TRUST ARCHITECTURE
+    // =========================================================================
+    // Policy Requirements:
+    // 1. Unauthenticated users can read: type, category, date, and public_description.
+    // 2. Unauthenticated users can create a document, writing to all fields including hidden_identifier.
+    // 3. Unauthenticated users CANNOT read hidden_identifier or match_confidence.
+    // 4. Only authenticated users with the `isAdmin` token can read, update, or delete
+    //    the hidden_identifier, match_confidence, and the full document.
+    // =========================================================================
+    match /Tickets/{ticketId} {
+      // Rule 2: Unauthenticated users can create tickets, writing all fields including hidden_identifier
+      allow create: if isValidId(ticketId) && isValidTicket(request.resource.data);
+
+      // Rule 3 & 4: Only authenticated users with `isAdmin` token claim can read the full ticket document
+      // (This guarantees unauthenticated users cannot read hidden_identifier or match_confidence directly)
+      allow read: if isAdmin();
+
+      // Rule 4: Only authenticated users with `isAdmin` token can update or delete
+      allow update, delete: if isAdmin();
+
+      // Rule 1: Public Ledger Projection
+      // Provides sanitized read access containing only type, category, date, and public_description
+      match /public/ledger {
+        allow read: if true;
+        allow write: if isAdmin();
+      }
+    }
+
+    // Public ledger collection alias for optimized client-side listing queries
+    match /PublicLedger/{ticketId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

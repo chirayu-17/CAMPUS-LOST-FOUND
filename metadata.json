@@ -1,0 +1,6 @@
+{
+  "name": "Public Space Lost & Found",
+  "description": "A digital lost-and-found system for public spaces featuring algorithmic matching, spatial zoning, verification workflows, and AI item analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

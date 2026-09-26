@@ -1,0 +1,89 @@
+{
+  "entities": {
+    "Ticket": {
+      "title": "Ticket",
+      "description": "Institutional lost and found ticket enforcing zero-trust attribute masking.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique ticket ledger reference code (e.g., TK-2026-0812)",
+          "maxLength": 128
+        },
+        "type": {
+          "type": "string",
+          "description": "Report type classification",
+          "enum": ["lost", "found"]
+        },
+        "category": {
+          "type": "string",
+          "description": "Item categorization taxonomy",
+          "maxLength": 64
+        },
+        "date": {
+          "type": "string",
+          "description": "ISO-8601 incident or recovery timestamp",
+          "maxLength": 64
+        },
+        "public_description": {
+          "type": "string",
+          "description": "Redacted public details visible to all observers",
+          "maxLength": 2000
+        },
+        "hidden_identifier": {
+          "type": "string",
+          "description": "Cryptographic or private verification ground truth (serial numbers, engravings, hidden markings)",
+          "maxLength": 1000
+        },
+        "match_confidence": {
+          "type": "number",
+          "description": "Algorithmic match confidence score between 0 and 100 evaluated by institutional matching engine"
+        },
+        "status": {
+          "type": "string",
+          "description": "Current lifecycle status in the public and institutional custody registry",
+          "enum": ["active", "in_custody", "under_interrogation", "restituted", "flagged"]
+        }
+      },
+      "required": ["type", "category", "date", "public_description"]
+    },
+    "PublicTicketProjection": {
+      "title": "PublicTicketProjection",
+      "description": "Public unauthenticated ledger view of active items with sensitive attributes omitted.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["lost", "found"]
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "date": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "public_description": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      },
+      "required": ["type", "category", "date", "public_description"]
+    }
+  },
+  "firestore": {
+    "/Tickets/{ticketId}": {
+      "schema": {
+        "$ref": "#/entities/Ticket"
+      },
+      "description": "Zero-trust master tickets repository storing complete records, hidden identifiers, and match scores."
+    },
+    "/Tickets/{ticketId}/public/ledger": {
+      "schema": {
+        "$ref": "#/entities/PublicTicketProjection"
+      },
+      "description": "Sanitized public ledger sub-resource viewable without authentication."
+    }
+  }
+}
