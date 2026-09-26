@@ -1,14 +1,1 @@
-# Campus Lost & Found
-> Institutional Property Recovery & AI Forensic Verification
-
-Campus Lost & Found is a modern, real-time web application designed to help students, faculty, and staff quickly report, track, and recover misplaced belongings across campus. Powered by the intelligent Chiroz AI Agent, the platform transforms the traditional campus lost-and-found desk into an automated, transparent, and secure digital recovery hub.
-
----
-
-### Key Features
-
-- **Chiroz AI Assistant:** Built-in conversational agent powered by Gemini to help users quickly report items, search active inventory, and resolve claims.
-- **Real-Time Recovery Ledger:** A live, auto-updating board tracking reported lost and found items across campus without manual page refreshes.
-- **One-Click Categorization:** Fast visual filters for high-frequency campus items, including Student IDs, Smartphones, Keys, Headphones, Water Bottles, Eyeglasses, and Chargers.
-- **AI Forensic Verification:** Intelligent cross-referencing and verification workflows to prevent false claims and match items accurately.
-- **Dynamic Search & Sorting:** Filter by status (All, Lost, Found) or sort alphabetically and chronologically to pinpoint missing property in seconds.
+Campus Lost & Found is an institutional property recovery platform designed to streamline how students, faculty, and staff report and reclaim misplaced belongings across campus. Combining a real-time tracking ledger with AI forensic verification powered by the built-in Chiroz AI Agent, the platform modernizes traditional campus lost-and-found desks into a fast, transparent digital recovery hub.   Key Features 🚀🏷️ Quick-Access Categorization: Rapidly browse or file items across high-frequency campus categories such as ID Cards, Smartphones, Keys, Water Bottles, Eyeglasses, Cables, and Headphones.   ⚡ Real-Time Recovery Ledger: A live feed displaying verified lost and found listings as they happen, complete with dynamic filtering and sorting controls.   🤖 Chiroz AI Agent Support: An integrated conversational assistant powered by Gemini to help users search inventory, identify potential matches, and log claims effortlessly.   🔍 Forensic Verification: Automated verification workflows designed to prevent false claims and ensure lost property safely reaches its rightful owner.   🌙 User-Centric Design: Clean, modern dark-mode interface with intuitive controls for reporting lost goods, submitting found items, and managing user profiles.  
