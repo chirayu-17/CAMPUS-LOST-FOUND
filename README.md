@@ -1,1 +1,35 @@
-Campus Lost & Found is an institutional property recovery platform designed to streamline how students, faculty, and staff report and reclaim misplaced belongings across campus. Combining a real-time tracking ledger with AI forensic verification powered by the built-in Chiroz AI Agent, the platform modernizes traditional campus lost-and-found desks into a fast, transparent digital recovery hub.   Key Features 🚀🏷️ Quick-Access Categorization: Rapidly browse or file items across high-frequency campus categories such as ID Cards, Smartphones, Keys, Water Bottles, Eyeglasses, Cables, and Headphones.   ⚡ Real-Time Recovery Ledger: A live feed displaying verified lost and found listings as they happen, complete with dynamic filtering and sorting controls.   🤖 Chiroz AI Agent Support: An integrated conversational assistant powered by Gemini to help users search inventory, identify potential matches, and log claims effortlessly.   🔍 Forensic Verification: Automated verification workflows designed to prevent false claims and ensure lost property safely reaches its rightful owner.   🌙 User-Centric Design: Clean, modern dark-mode interface with intuitive controls for reporting lost goods, submitting found items, and managing user profiles.  
+# 🏫 CAMPUS LOST & FOUND
+> **Institutional Property Recovery & AI Forensic Verification** 🔍✨
+
+---
+
+### 📌 Overview
+
+Campus Lost & Found modernizes traditional lost-and-found desks into a fast, transparent digital recovery hub for students, faculty, and staff[cite: 1]. 
+
+Powered by the **Chiroz AI Agent** (built with Gemini), the platform combines a live tracking ledger with intelligent forensic verification to ensure lost belongings reach their rightful owners quickly and safely[cite: 1].
+
+---
+
+### ✨ Key Features
+
+* 🏷️ **Quick-Access Categorization**  
+  Instantly filter or log high-frequency items like Student IDs, Phones, Keys, Headphones, Umbrellas, and Chargers[cite: 1].
+
+* ⚡ **Real-Time Recovery Ledger**  
+  A live, dynamic feed displaying reported lost and found items instantly without page reloads[cite: 1].
+
+* 🤖 **Chiroz AI Agent**  
+  An integrated Gemini-powered conversational assistant to guide reports, search inventory, and identify matches[cite: 1].
+
+* 🛡️ **Forensic Verification**  
+  Intelligent matching workflows to authenticate ownership and prevent fraudulent claims[cite: 1].
+
+* 🌙 **Clean Modern Interface**  
+  A sleek dark-mode UI with intuitive controls for reporting items and managing profiles[cite: 1].
+
+---
+
+### 💻 GitHub Description Box (Under 350 Chars)
+
+🏫 Institutional property recovery platform featuring a real-time ledger, instant claim matching, and AI forensic verification powered by the Gemini-based Chiroz AI Agent 🔍⚡
