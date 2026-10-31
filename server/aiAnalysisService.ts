@@ -79,7 +79,7 @@ Deeply cross-examine the two 'hidden_identifier' strings (along with category an
 `;
 
         const timeoutPromise = new Promise<never>((_, reject) =>
-          setTimeout(() => reject(new Error('AI inference timeout exceeded')), 4500)
+          setTimeout(() => reject(new Error('AI inference timeout exceeded')), 12000)
         );
 
         const response = await Promise.race([

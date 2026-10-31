@@ -27,6 +27,36 @@ class ClientAIAnalysisService {
   }
 
   /**
+   * Evaluates a single registered item using Gemini 3.8 Flash to calculate forensic integrity,
+   * risk profile, and recommended blind challenge questions.
+   */
+  public async inspectItem(item: {
+    id: string;
+    type?: string;
+    category?: string;
+    description: string;
+    location?: string;
+    date?: string;
+    hidden_identifier: string;
+  }): Promise<AIPairAnalysis> {
+    const response = await fetch('/api/ai/inspect-item', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ item }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Item inspection failed: ${response.status} - ${errorText}`);
+    }
+
+    const data = await response.json();
+    return data.analysis as AIPairAnalysis;
+  }
+
+  /**
    * Runs an algorithmic and Gemini analysis across all active lost & found records
    * in the ledger to assign match_confidence scores.
    */

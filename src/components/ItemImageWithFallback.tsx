@@ -13,6 +13,7 @@ import {
   Shirt,
   BookOpen,
   Package,
+  Watch,
   LucideIcon
 } from 'lucide-react';
 
@@ -23,6 +24,16 @@ interface CategoryConfig {
 }
 
 const CATEGORY_MAP: Record<string, CategoryConfig> = {
+  watch: {
+    icon: Watch,
+    name: 'Watch / Timepiece',
+    tagline: 'Wristwear & Smartwatch',
+  },
+  other: {
+    icon: Package,
+    name: 'Other / Custom Item',
+    tagline: 'Campus Property',
+  },
   bottle: {
     icon: BottleWine,
     name: 'Drinkware / Bottle',
@@ -125,6 +136,9 @@ export function getCategorySilhouette(category?: string): CategoryConfig {
   }
   if (normalized.includes('phone') || normalized.includes('mobile') || normalized.includes('iphone') || normalized.includes('android')) {
     return CATEGORY_MAP.phone;
+  }
+  if (normalized.includes('watch') || normalized.includes('smartwatch') || normalized.includes('timepiece') || normalized.includes('wrist')) {
+    return CATEGORY_MAP.watch;
   }
   if (normalized.includes('cable') || normalized.includes('charger') || normalized.includes('cord') || normalized.includes('wire')) {
     return CATEGORY_MAP.cable;

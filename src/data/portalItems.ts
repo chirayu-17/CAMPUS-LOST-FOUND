@@ -1,7 +1,7 @@
 export interface PortalItem {
   id: string;
   title: string;
-  category: 'bottle' | 'umbrella' | 'headphones' | 'glasses' | 'id_card' | 'keys' | 'phone' | 'cable';
+  category: 'bottle' | 'umbrella' | 'headphones' | 'glasses' | 'id_card' | 'keys' | 'phone' | 'cable' | 'watch' | 'other' | string;
   location: string;
   type: 'found' | 'lost';
   imageUrl: string;
@@ -14,6 +14,8 @@ export interface PortalItem {
   verification_challenge?: string;
   reporterName?: string;
   reporterContact?: string;
+  createdAt?: string;
+  customCategory?: string;
 }
 
 // Default items are completely cleared; only real user posts are stored and displayed
@@ -29,5 +31,7 @@ export const CATEGORY_DEFAULT_IMAGES: Record<string, string> = {
   keys: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?w=500&q=80',
   phone: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80',
   cable: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500&q=80',
+  watch: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&q=80',
+  other: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80',
 };
 

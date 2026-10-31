@@ -195,5 +195,94 @@ button, a, input, select, textarea {
   border-color: var(--item-card-border-hover-dark) !important;
 }
 
+/* ======================================================== */
+/* GUARANTEED HIGH-CONTRAST SEARCH BAR TEXT VISIBILITY     */
+/* ======================================================== */
+
+/* Light Mode Defaults */
+#desktop-search-input,
+#mobile-search-input {
+  color: #09090b !important;
+  -webkit-text-fill-color: #09090b !important;
+  caret-color: #2563eb !important;
+  background-color: #f4f4f5 !important;
+  border-color: #d4d4d8 !important;
+  opacity: 1 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+#desktop-search-input:hover,
+#mobile-search-input:hover {
+  background-color: #ffffff !important;
+  border-color: #a1a1aa !important;
+}
+
+#desktop-search-input:focus,
+#mobile-search-input:focus {
+  background-color: #ffffff !important;
+  color: #09090b !important;
+  -webkit-text-fill-color: #09090b !important;
+  border-color: #09090b !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08) !important;
+}
+
+#desktop-search-input::placeholder,
+#mobile-search-input::placeholder {
+  color: #71717a !important;
+  -webkit-text-fill-color: #71717a !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+}
+
+/* Dark Mode Overrides (High-Contrast White Text on Charcoal / Pitch Background) */
+:is(.dark, html.dark, body.dark, .dark *) #desktop-search-input,
+:is(.dark, html.dark, body.dark, .dark *) #mobile-search-input {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #60a5fa !important;
+  background-color: #18181b !important;
+  border-color: #3f3f46 !important;
+  opacity: 1 !important;
+}
+
+:is(.dark, html.dark, body.dark, .dark *) #desktop-search-input:hover,
+:is(.dark, html.dark, body.dark, .dark *) #mobile-search-input:hover {
+  background-color: #222226 !important;
+  border-color: #52525b !important;
+}
+
+:is(.dark, html.dark, body.dark, .dark *) #desktop-search-input:focus,
+:is(.dark, html.dark, body.dark, .dark *) #mobile-search-input:focus {
+  background-color: #242429 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12) !important;
+}
+
+:is(.dark, html.dark, body.dark, .dark *) #desktop-search-input::placeholder,
+:is(.dark, html.dark, body.dark, .dark *) #mobile-search-input::placeholder {
+  color: #a1a1aa !important;
+  -webkit-text-fill-color: #a1a1aa !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+}
+
+/* Browser Autofill styling override to avoid browser default white-box-on-dark */
+#desktop-search-input:-webkit-autofill,
+#mobile-search-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #f4f4f5 inset !important;
+  -webkit-text-fill-color: #09090b !important;
+}
+
+:is(.dark, html.dark, body.dark, .dark *) #desktop-search-input:-webkit-autofill,
+:is(.dark, html.dark, body.dark, .dark *) #mobile-search-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #18181b inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 
 
